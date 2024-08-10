@@ -76,7 +76,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.github.ryamal.documentmanager/com.github.ryamal.documentmanager.HelloApplication
+                                com.github.ryamal.documentmanager/com.github.ryamal.documentmanager.DocumentManagerApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
