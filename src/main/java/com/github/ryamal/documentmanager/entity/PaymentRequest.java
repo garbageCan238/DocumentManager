@@ -1,45 +1,12 @@
 package com.github.ryamal.documentmanager.entity;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 @Entity
-public class PaymentRequest {
-    @Id
-    private String number;
-    private LocalDate date;
-    @Column(name="'user'")
-    private String user;
+public class PaymentRequest extends BaseDocument {
     private BigDecimal amount;
     private String employee;
-
-    public String getNumber() {
-        return number;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
 
     public BigDecimal getAmount() {
         return amount;

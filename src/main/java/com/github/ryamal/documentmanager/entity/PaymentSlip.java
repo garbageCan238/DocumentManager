@@ -1,48 +1,15 @@
 package com.github.ryamal.documentmanager.entity;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 @Entity
-public class PaymentSlip {
-    @Id
-    private String number;
-    private LocalDate date;
-    @Column(name="'user'")
-    private String user;
+public class PaymentSlip extends BaseDocument {
     private String counterparty;
     private BigDecimal amount;
     private String currency;
     private BigDecimal exchangeRate;
     private BigDecimal commission;
-
-    public String getNumber() {
-        return number;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
 
     public String getCounterparty() {
         return counterparty;
