@@ -6,8 +6,8 @@ import org.hibernate.SessionFactory;
 import java.util.List;
 
 public class GenericDAOImpl<T, K> implements GenericDAO<T, K> {
-    private final Class<T> persistentClass;
-    private final SessionFactory sessionFactory;
+    protected final Class<T> persistentClass;
+    protected final SessionFactory sessionFactory;
 
     public GenericDAOImpl(Class<T> persistentClass, SessionFactory factory) {
         this.persistentClass = persistentClass;
