@@ -4,12 +4,20 @@ import jakarta.persistence.Entity;
 import java.math.BigDecimal;
 
 @Entity
-public class Invoice extends BaseDocument {
+public class PaymentSlipEntity extends AbstractDocumentEntity {
+    private String counterparty;
     private BigDecimal amount;
     private String currency;
     private BigDecimal exchangeRate;
-    private String product;
-    private BigDecimal quantity;
+    private BigDecimal commission;
+
+    public String getCounterparty() {
+        return counterparty;
+    }
+
+    public void setCounterparty(String counterparty) {
+        this.counterparty = counterparty;
+    }
 
     public BigDecimal getAmount() {
         return amount;
@@ -35,33 +43,25 @@ public class Invoice extends BaseDocument {
         this.exchangeRate = exchangeRate;
     }
 
-    public String getProduct() {
-        return product;
+    public BigDecimal getCommission() {
+        return commission;
     }
 
-    public void setProduct(String product) {
-        this.product = product;
-    }
-
-    public BigDecimal getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(BigDecimal quantity) {
-        this.quantity = quantity;
+    public void setCommission(BigDecimal commission) {
+        this.commission = commission;
     }
 
     @Override
     public String toString() {
-        return "Invoice{" +
+        return "PaymentSlip{" +
                 "number='" + number + '\'' +
                 ", date=" + date +
                 ", user='" + user + '\'' +
+                ", counterparty='" + counterparty + '\'' +
                 ", amount=" + amount +
                 ", currency='" + currency + '\'' +
                 ", exchangeRate=" + exchangeRate +
-                ", product='" + product + '\'' +
-                ", quantity=" + quantity +
+                ", commission=" + commission +
                 '}';
     }
 }

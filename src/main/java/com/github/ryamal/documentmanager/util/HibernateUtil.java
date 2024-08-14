@@ -1,8 +1,8 @@
 package com.github.ryamal.documentmanager.util;
 
-import com.github.ryamal.documentmanager.entity.Invoice;
-import com.github.ryamal.documentmanager.entity.PaymentRequest;
-import com.github.ryamal.documentmanager.entity.PaymentSlip;
+import com.github.ryamal.documentmanager.entity.InvoiceEntity;
+import com.github.ryamal.documentmanager.entity.PaymentRequestEntity;
+import com.github.ryamal.documentmanager.entity.PaymentSlipEntity;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -19,9 +19,9 @@ public class HibernateUtil {
 
             return new Configuration()
                     .addProperties(properties)
-                    .addAnnotatedClass(Invoice.class)
-                    .addAnnotatedClass(PaymentRequest.class)
-                    .addAnnotatedClass(PaymentSlip.class)
+                    .addAnnotatedClass(InvoiceEntity.class)
+                    .addAnnotatedClass(PaymentRequestEntity.class)
+                    .addAnnotatedClass(PaymentSlipEntity.class)
                     .buildSessionFactory();
         } catch (Throwable ex) {
             throw new ExceptionInInitializerError(ex);

@@ -4,7 +4,7 @@ import jakarta.persistence.Entity;
 import java.math.BigDecimal;
 
 @Entity
-public class PaymentRequest extends BaseDocument {
+public class PaymentRequestEntity extends AbstractDocumentEntity {
     private BigDecimal amount;
     private String employee;
 

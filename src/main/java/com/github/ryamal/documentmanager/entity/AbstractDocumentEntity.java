@@ -1,17 +1,16 @@
 package com.github.ryamal.documentmanager.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
-public abstract class BaseDocument implements Serializable {
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class AbstractDocumentEntity implements Serializable {
     @Id
     protected String number;
-    protected LocalDateTime date = LocalDateTime.now();
+    protected LocalDate date = LocalDate.now();
     @Column(name = "'user'")
     protected String user;
 
@@ -23,11 +22,11 @@ public abstract class BaseDocument implements Serializable {
         this.number = number;
     }
 
-    public LocalDateTime getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(LocalDateTime date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
@@ -38,4 +37,7 @@ public abstract class BaseDocument implements Serializable {
     public void setUser(String user) {
         this.user = user;
     }
+
+    @Override
+    public abstract String toString();
 }
